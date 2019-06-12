@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react' 
 import styled from 'styled-components' 
 import PropTypes from 'prop-types'
-import Todo from './Todo';
-import uuid from 'uuid';
+import Todo from './Todo' 
+import Filter from './Filter'
+import uuid from 'uuid' 
 
 
 const App =({className}) => {
@@ -23,24 +24,21 @@ const App =({className}) => {
     e.preventDefault();
     if(input.trim().length<3) return alert('please add more than 3 letters') 
     const newTodo = {id: uuid.v4(), title: input, completed: false}
-    const newTodoList= [...todos, newTodo ]
+    const dataSaveInLS= [...todos, newTodo ]
     setInput('')
-    const dataSaveInLS = newTodoList
     setLocalStorage(dataSaveInLS)
   }
 
   const removeTodo = id => {  
-    const removeTodoResult = todos.filter( todo=> todo.id !== id)
-    const dataSaveInLS = removeTodoResult
+    const dataSaveInLS = todos.filter( todo=> todo.id !== id)
     setLocalStorage(dataSaveInLS)
   }
 
   const markCom = id => {
-    const markComResult = todos.map(todo => {
+    const dataSaveInLS = todos.map(todo => {
       if (todo.id === id) return { ...todo, completed: !todo.completed } 
       return todo 
     })
-    const dataSaveInLS = markComResult
     setLocalStorage(dataSaveInLS)
   } 
  
@@ -65,6 +63,7 @@ const App =({className}) => {
       markCom={markCom}
       />)}    
      </div>  
+    <Filter />
     </div>
   );
 }
@@ -83,9 +82,7 @@ input {
   margin: 0 20px;
 }
  
-button {
-  border-radius: 15px;
-}
+
 .inputbox{
   width:200px;
   height:30px;
