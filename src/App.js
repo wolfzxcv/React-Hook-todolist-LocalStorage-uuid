@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components' 
 import PropTypes from 'prop-types'
 import Todo from './Todo';
@@ -6,41 +6,43 @@ import uuid from 'uuid';
 
 
 const App =({className}) => {
-  const todosData = [
-    {
-      id: 1, title: 'eat Smash', completed: false
-    },
-    {
-      id: 2, title: 'love Norway', completed: false
-    },
-    {
-      id: 3, title: 'move to Norway', completed: false
-    }
-   ]
 
   const [input, setInput] = useState('')
-  const [todos, setTodos] = useState(todosData)
+  const [todos, setTodos] = useState([])
   
+  useEffect(() => {
+    setTodos(JSON.parse(localStorage.getItem("localStorageTodos")) || []) 
+  },[]) 
+   
+  const setLocalStorage = dataSaveInLS => {
+    setTodos(dataSaveInLS)
+    localStorage.setItem("localStorageTodos", JSON.stringify(dataSaveInLS)) 
+  } 
+
   const addTodo = e => {
     e.preventDefault();
-    if(input.trim().length<3) return alert('please add more than 3 letters');
+    if(input.trim().length<3) return alert('please add more than 3 letters') 
     const newTodo = {id: uuid.v4(), title: input, completed: false}
-    setTodos([...todos, newTodo ])
+    const newTodoList= [...todos, newTodo ]
     setInput('')
+    const dataSaveInLS = newTodoList
+    setLocalStorage(dataSaveInLS)
   }
 
   const removeTodo = id => {  
-    setTodos(todos.filter( todo=> todo.id !== id))
+    const removeTodoResult = todos.filter( todo=> todo.id !== id)
+    const dataSaveInLS = removeTodoResult
+    setLocalStorage(dataSaveInLS)
   }
 
   const markCom = id => {
-    setTodos(
-      todos.map(todo => {
-        if (todo.id === id) return { ...todo, completed: !todo.completed };
-        return todo;
-      })
-    );
-  };
+    const markComResult = todos.map(todo => {
+      if (todo.id === id) return { ...todo, completed: !todo.completed } 
+      return todo 
+    })
+    const dataSaveInLS = markComResult
+    setLocalStorage(dataSaveInLS)
+  } 
  
   return (
     <div className={className}>
