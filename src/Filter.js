@@ -1,11 +1,11 @@
 import React from 'react'
 
- const Filter = ({className}) => {
+ const Filter = ({className, all, active, done}) => {
    return (
      <div className={className}>
-     <button>All</button>
-     <button>Completed</button>
-     <button>Active</button>
+     <button onClick={all}>All</button>
+     <button onClick={active}>Active</button>
+     <button onClick={done}>Completed</button>
      </div>
    )
  }

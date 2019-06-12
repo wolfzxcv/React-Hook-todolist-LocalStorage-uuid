@@ -10,13 +10,16 @@ const App =({className}) => {
 
   const [input, setInput] = useState('')
   const [todos, setTodos] = useState([])
+  const [display, setDisplay] = useState([])
   
   useEffect(() => {
     setTodos(JSON.parse(localStorage.getItem("localStorageTodos")) || []) 
+    setDisplay(JSON.parse(localStorage.getItem("localStorageTodos")) || [])
   },[]) 
    
   const setLocalStorage = dataSaveInLS => {
     setTodos(dataSaveInLS)
+    setDisplay(dataSaveInLS)
     localStorage.setItem("localStorageTodos", JSON.stringify(dataSaveInLS)) 
   } 
 
@@ -41,6 +44,12 @@ const App =({className}) => {
     })
     setLocalStorage(dataSaveInLS)
   } 
+
+  const all = () => setDisplay(todos)
+
+  const active = () => setDisplay( todos.filter( todo => todo.completed === false) )
+
+  const done = () => setDisplay ( todos.filter( todo => todo.completed === true) ) 
  
   return (
     <div className={className}>
@@ -53,7 +62,7 @@ const App =({className}) => {
      </form>  
      <h5>Add something and press 'ENTER' to input</h5>
      <div>
-     {todos.map( todo => 
+     {display.map( todo => 
       <Todo
       key={todo.id}
       id={todo.id}
@@ -63,7 +72,7 @@ const App =({className}) => {
       markCom={markCom}
       />)}    
      </div>  
-    <Filter />
+    <Filter all={all} active={active} done={done} /> 
     </div>
   );
 }
@@ -82,7 +91,6 @@ input {
   margin: 0 20px;
 }
  
-
 .inputbox{
   width:200px;
   height:30px;
