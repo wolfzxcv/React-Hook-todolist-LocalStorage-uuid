@@ -3,16 +3,9 @@ import styled from 'styled-components'
 import PropTypes from 'prop-types'
 
 const Todo = ({className, id, todos, completed, markCom, removeTodo}) => {
- const getStyle=()=>{
-  return{
-    textDecoration: completed ?
-    'line-through' : 'none'
-  }  
-}  
-
   return (
-    <div className={className}>
-      <div style={getStyle()}>
+    <div className={className} completed={completed}>
+      <div>
       <input  type='checkbox' checked={completed} onChange={()=>markCom(id)} />{todos}
       <button  onClick={()=>removeTodo(id)}>X</button>
       </div>
@@ -31,7 +24,7 @@ const StyledTodo =styled(Todo)`
   &:hover {
     color: #fa923f;
   }
-/*  text-decoration: ${ props =>props.completed? 'line-through' : 'none'} ;  */
+  text-decoration: ${ props =>props.completed? 'line-through' : 'none'} ;
 `
 StyledTodo.displayName = 'Todo'
 

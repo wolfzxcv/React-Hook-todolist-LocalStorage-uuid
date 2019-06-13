@@ -5,7 +5,6 @@ import Todo from './Todo'
 import Filter from './Filter'
 import uuid from 'uuid' 
 
-
 const App =({className}) => {
 
   const [input, setInput] = useState('')
