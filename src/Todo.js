@@ -42,8 +42,6 @@ const StyledTodo = styled(Todo)`
     text-decoration: ${ props =>props.completed? 'line-through' : 'none'};
   }
 
- 
-
   input, .button{
     width: 50px;
     height: 50px;
@@ -59,7 +57,6 @@ const StyledTodo = styled(Todo)`
     background-color: #483D8B;
     border-radius: 10px;
   }
-  
 
 `
 StyledTodo.displayName = 'Todo'
