@@ -52,14 +52,32 @@ const App =({className}) => {
  
   return (
     <div className={className}>
+      <div className='title'>
+       <div>
+         The things that you forget, 
+       </div>
+       <div>
+          are the things not that important...
+       </div>
+      </div>
+
+      <div className='add-something'> 
+       <div>Add something</div>
+       <div className='computer'>and press 'ENTER' to input</div>
+     </div>
+
+     <div className='body'>
      <form onSubmit={addTodo}>
        <input className='inputbox' type='text' 
               placeholder='What should I do later...' 
               value={input} 
               onChange={ e => setInput(e.target.value) } 
-              />   
-     </form>  
-     <h5>Add something and press 'ENTER' to input</h5>
+              />
+        <button className='add'>Add</button>         
+     </form> 
+     </div>
+
+
      <div>
      {display.map( todo => 
       <Todo
@@ -82,18 +100,101 @@ App.propTypes = {
 
 const StyledApp = styled(App)`
   text-align: center;
-  font-size: 28px;
+  font-size: 32px;
   letter-spacing: 2px;
+
+.title{
+  font-family: oblique,	serif;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFE4C4;
+  background-color: #5F9EA0;
+  div{
+    display: flex;
+  }
+}  
+
+.add-something{
+  height: 100px;
+  font-size: 20px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #483D8B;
+  background-color: #5F9EA0;
 }
 
-input {
-  margin: 0 20px;
+.body{
+  color: #5F9EA0;
+  background-color: #FFE4C4;
+  display: flex;
+  flex-direction: column;
 }
+
+
  
-.inputbox{
-  width:200px;
-  height:30px;
+.inputbox{  
+  padding: 10px;
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border:2px solid gray;
+  background:rgba(4, 93, 93, 0.7);
+  color: white;
+  font-size: 24px;
 }  
+
+
+
+@media (min-width: 769px){
+  input {
+  margin: 50px 20px;
+  }
+
+  .add{
+    display: none;
+  }  
+}
+
+
+@media (max-width: 768px){
+  input {
+  margin: 50px 20px 20px 20px;
+  }
+
+  .add{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    width: 330px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;    
+    color: #FFE4C4;
+    background-color: #8B4513;
+  }
+
+  .computer{
+    display: none;
+  }
+}  
+
+
+@media (min-width: 900px){
+  .title{
+  flex-direction: row;
+  }
+}
+
+@media (max-width: 899px){
+  .title{
+  flex-direction: column;
+  }
+}
+
 `
 StyledApp.displayName = 'App'
 
