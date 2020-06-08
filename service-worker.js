@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-Hook-todolist-LocalStorage-uuid/precache-manifest.2dffe062df25786de3966920e5129839.js"
+  "/React-Hook-todolist-LocalStorage-uuid/precache-manifest.ad0c179fb422f422f3db655db58a5517.js"
 );
 
 self.addEventListener('message', (event) => {

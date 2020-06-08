@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/React-Hook-todolist-LocalStorage-uuid/static/css/main.34de6062.chunk.css",
-    "main.js": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.2def5fcb.chunk.js",
-    "main.js.map": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.2def5fcb.chunk.js.map",
+    "main.js": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.425e6e9b.chunk.js",
+    "main.js.map": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.425e6e9b.chunk.js.map",
     "runtime~main.js": "/React-Hook-todolist-LocalStorage-uuid/static/js/runtime~main.112cd810.js",
     "runtime~main.js.map": "/React-Hook-todolist-LocalStorage-uuid/static/js/runtime~main.112cd810.js.map",
     "static/js/2.08d8e669.chunk.js": "/React-Hook-todolist-LocalStorage-uuid/static/js/2.08d8e669.chunk.js",
     "static/js/2.08d8e669.chunk.js.map": "/React-Hook-todolist-LocalStorage-uuid/static/js/2.08d8e669.chunk.js.map",
     "index.html": "/React-Hook-todolist-LocalStorage-uuid/index.html",
-    "precache-manifest.2dffe062df25786de3966920e5129839.js": "/React-Hook-todolist-LocalStorage-uuid/precache-manifest.2dffe062df25786de3966920e5129839.js",
+    "precache-manifest.ad0c179fb422f422f3db655db58a5517.js": "/React-Hook-todolist-LocalStorage-uuid/precache-manifest.ad0c179fb422f422f3db655db58a5517.js",
     "service-worker.js": "/React-Hook-todolist-LocalStorage-uuid/service-worker.js",
     "static/css/main.34de6062.chunk.css.map": "/React-Hook-todolist-LocalStorage-uuid/static/css/main.34de6062.chunk.css.map"
   }

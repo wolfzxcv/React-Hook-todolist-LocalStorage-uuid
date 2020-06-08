@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f31a0aec8514a87b83b2879eb86ec175",
+    "revision": "638cd37d76956588db0fb013e4b3f801",
     "url": "/React-Hook-todolist-LocalStorage-uuid/index.html"
   },
   {
-    "revision": "be5472fed1d195adf1ec",
+    "revision": "fe3961cd64c7007a7136",
     "url": "/React-Hook-todolist-LocalStorage-uuid/static/css/main.34de6062.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-Hook-todolist-LocalStorage-uuid/static/js/2.08d8e669.chunk.js"
   },
   {
-    "revision": "be5472fed1d195adf1ec",
-    "url": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.2def5fcb.chunk.js"
+    "revision": "fe3961cd64c7007a7136",
+    "url": "/React-Hook-todolist-LocalStorage-uuid/static/js/main.425e6e9b.chunk.js"
   },
   {
     "revision": "bf7aabd15f878bf57614",
